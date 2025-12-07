@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Csatlakozz – StreetBallers FC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Tari Bence">
+  <meta name="description" content="Jelentkezés StreetBallers FC kispályás meccsekre és edzésekre.">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-signup">
+<header class="site-header">
+  <div class="logo">StreetBallers<span>FC</span></div>
+  <button class="nav-toggle" aria-label="Menü">
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+  </button>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Kezdőlap</a></li>
+      <li><a href="drills.html">Edzésötletek</a></li>
+      <li><a href="tracker.html">Terhelésmérő</a></li>
+      <li><a href="signup.html" class="active">Csatlakozz</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero small">
+    <h1>Jelentkezz a csapatba még ma!</h1>
+    <p>Add meg az adataid, és felírunk a StreetBallers FC következő kispályás meccsére.</p>
+  </section>
+
+  <section class="section signup-section">
+    <div class="signup-layout">
+      <aside class="signup-card-left">
+        <div class="signup-badge">Matchday form</div>
+        <h2>StreetBallers FC keret</h2>
+        <p>Barátságos légkör, technikás játék, befogadó közösség. Nem kell profi szint, elég ha szeretsz focizni és szívesen kipróbálnád magad ismeretlenekkel is.</p>
+
+        <div class="signup-highlights">
+          <div>
+            <span class="label">Helyszín</span>
+            <span class="value">Budapest, helyszín változó</span>
+          </div>
+          <div>
+            <span class="label">Időpont</span>
+            <span class="value">Este 19:00–21:00</span>
+          </div>
+          <div>
+            <span class="label">Meccs vibe</span>
+            <span class="value">Komoly, de nem vérre megy</span>
+          </div>
+        </div>
+
+        <div class="signup-tags">
+          <span class="tag">5v5 / 6v6</span>
+          <span class="tag">Fair play</span>
+          <span class="tag">Grund hangulat</span>
+        </div>
+
+        <p class="signup-note">
+          Kitöltés után kapsz egy visszaigazoló e-mailt, ha összeállt a keret az adott napra.
+        </p>
+      </aside>
+
+      <form id="signup-form" class="signup-card-right">
+        <h2>Jelentkezési űrlap</h2>
+
+        <div class="signup-row two">
+          <div class="field">
+            <label for="full-name">Név <span aria-hidden="true">*</span></label>
+            <input type="text" id="full-name" name="fullName" placeholder="Vezetéknév Keresztnév">
+            <span class="error" id="err-name"></span>
+          </div>
+          <div class="field field-age">
+            <label for="age">Életkor <span aria-hidden="true">*</span></label>
+            <input type="number" id="age" name="age" min="12" max="70" placeholder="20">
+            <span class="error" id="err-age"></span>
+          </div>
+        </div>
+
+        <div class="signup-row two">
+          <div class="field">
+            <label for="email">E-mail cím <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" placeholder="te@valami.hu">
+            <span class="error" id="err-email"></span>
+          </div>
+          <div class="field">
+            <label for="phone">Telefonszám <span aria-hidden="true">*</span></label>
+            <input type="tel" id="phone" name="phone" placeholder="+36...">
+            <span class="error" id="err-phone"></span>
+          </div>
+        </div>
+
+        <div class="signup-row two">
+          <div class="field">
+            <label for="fav-position">Kedvenc posztod <span aria-hidden="true">*</span></label>
+            <select id="fav-position" name="favPosition">
+              <option value="">Válassz…</option>
+              <option value="keeper">Kapus</option>
+              <option value="defender">Védő</option>
+              <option value="midfielder">Középpályás</option>
+              <option value="forward">Csatár</option>
+            </select>
+            <span class="error" id="err-position"></span>
+          </div>
+          <div class="field">
+            <label for="preferred-date">Melyik napon jönnél? <span aria-hidden="true">*</span></label>
+            <input type="date" id="preferred-date" name="preferredDate" min="">
+            <span class="error" id="err-date"></span>
+          </div>
+        </div>
+
+        <div class="signup-row">
+          <fieldset class="field-group signup-level-group">
+            <legend>Játékos-szint <span aria-hidden="true">*</span></legend>
+            <label>
+              <input type="radio" name="level" value="beginner">
+              Kezdő – „csak rúgnám a bőrt”.
+            </label>
+            <label>
+              <input type="radio" name="level" value="intermediate">
+              Középhaladó – nem jövök zavarba labdával.
+            </label>
+            <label>
+              <input type="radio" name="level" value="advanced">
+              Haladó – presszing, build-up, minden mehet.
+            </label>
+            <span class="error" id="err-level"></span>
+          </fieldset>
+        </div>
+
+        <div class="signup-row">
+          <div class="field">
+            <label for="message">Megjegyzés (opcionális)</label>
+            <textarea id="message" name="message" rows="4" placeholder="Pl.: preferált pozíció, haverok, akikkel jönnél, sérülés info stb."></textarea>
+          </div>
+        </div>
+
+        <div class="signup-row">
+          <label class="checkbox-label">
+            <input type="checkbox" id="terms" name="terms">
+            Elfogadom, hogy ez baráti játék, nincs reklamálás a bíróra, mert nincs bíró. <span aria-hidden="true">*</span>
+          </label>
+          <span class="error" id="err-terms"></span>
+        </div>
+
+        <button type="submit" class="btn primary full-width">Jelentkezem a keretbe</button>
+
+        <p class="form-success" id="signup-success" hidden>
+          Köszi, rögzítettük a jelentkezésed! Ha beférsz a keretbe az adott napra, írunk.
+        </p>
+
+        <p class="signup-footnote">
+          <span aria-hidden="true">*</span> A csillaggal jelölt mezők kitöltése kötelező.
+        </p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> StreetBallers FC – amatőr fociközösség</p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

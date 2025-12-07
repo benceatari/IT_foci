@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Terhelés tracker – StreetBallers FC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Vezetéknév Keresztnév">
+  <meta name="description" content="Match Load Tracker – jegyezd fel a meccsek és edzések terhelését, perceket és intenzitást.">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-tracker">
+<header class="site-header">
+  <div class="logo">StreetBallers<span>FC</span></div>
+  <button class="nav-toggle" aria-label="Menü">
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+    <span class="nav-toggle-line"></span>
+  </button>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Kezdőlap</a></li>
+      <li><a href="drills.html">Edzésötletek</a></li>
+      <li><a href="tracker.html" class="active">Terhelésmérő</a></li>
+      <li><a href="signup.html">Csatlakozz</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero small">
+    <h1>Terheléskalkulátor</h1>
+    <p>Add hozzá a meccseket/edzéseket, és lásd, mikor mész át túlterhelés-be.</p>
+  </section>
+
+  <section class="section tracker-section">
+    <div class="planner-grid">
+      <form id="session-form" class="card">
+        <h2>Új esemény rögzítése</h2>
+
+        <label for="session-date">Dátum</label>
+        <input type="date" id="session-date" name="sessionDate" required>
+
+        <label for="session-type">Típus</label>
+        <select id="session-type" name="sessionType">
+          <option value="match">Meccs</option>
+          <option value="training">Edzés</option>
+          <option value="small-sided">Kispályás játék</option>
+        </select>
+
+        <label for="session-minutes">Percek száma</label>
+        <input type="number" id="session-minutes" name="sessionMinutes" min="10" max="180" value="60" required>
+
+        <label for="session-rpe">Szubjektív intenzitás (1–10)</label>
+        <input type="number" id="session-rpe" name="sessionRpe" min="1" max="10" value="6" required>
+
+        <label for="session-position">Poszt</label>
+        <select id="session-position" name="sessionPosition">
+          <option value="keeper">Kapus</option>
+          <option value="defender">Védő</option>
+          <option value="midfielder">Középpályás</option>
+          <option value="forward">Csatár</option>
+        </select>
+
+        <label for="session-notes">Megjegyzés (opcionális)</label>
+        <textarea id="session-notes" name="sessionNotes" rows="3" placeholder="Pl.: kemény meccs, sok sprint, csúszós pálya."></textarea>
+
+        <button type="submit" class="btn primary full-width">Hozzáadás</button>
+        <button type="button" id="clear-sessions" class="btn ghost full-width">Összes adat törlése</button>
+      </form>
+
+      <div class="card planner-summary">
+        <h2>Heti összefoglaló (csak iránymutatás, a teljes terhelésed kiszámításához több adatra van szükség)</h2>
+        <div class="planner-metrics">
+          <div>
+            <span class="metric-label">Események száma</span>
+            <span class="metric-value" id="stat-count">0</span>
+          </div>
+          <div>
+            <span class="metric-label">Összes perc</span>
+            <span class="metric-value" id="stat-minutes">0</span>
+          </div>
+          <div>
+            <span class="metric-label">Összterhelés (intenzitás × perc)</span>
+            <span class="metric-value" id="stat-load">0</span>
+          </div>
+        </div>
+
+        <div class="planner-table-wrapper">
+          <table class="planner-table">
+            <thead>
+              <tr>
+                <th>Dátum</th>
+                <th>Típus</th>
+                <th>Percek</th>
+                <th>Intenzitás</th>
+                <th>Terhelés</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="sessions-body">
+            </tbody>
+          </table>
+        </div>
+
+        <p class="planner-hint" id="load-hint">
+          Tipp: ha 1000 fölé megy az összterhelés egy hétre, néha ér meccs nélkül is létezni.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> StreetBallers FC – amatőr fociközösség</p>
+</footer>
+
+<script src="tracker.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
