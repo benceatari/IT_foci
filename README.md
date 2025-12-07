@@ -2,7 +2,7 @@ Készítő neve:
 Tari Bence
 
 Működő weboldal URL címe:
-https://github.com/benceatari/html_beadando
+https://benceatari.github.io/IT_foci/
 
 A weboldal témája:
 A "StreetBallers FC" egy amatőr fociközösség weboldala, ahol edzésötletek, egy terheléskövető és egy jelentkezési űrlap található kispályás meccsekhez. A cél, hogy a játékosok átláthatóan kövessék a heti terhelésüket és könnyen csatlakozzanak baráti meccsekhez.
